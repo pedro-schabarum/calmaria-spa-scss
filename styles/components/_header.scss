@@ -1,0 +1,87 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixins';
+
+header {
+    background: variaveis.$gradiente-primario;
+    padding: 2rem;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+
+        .linha {
+            border-top: 1px solid #000;
+            width: 80%;
+        }
+
+        ul {
+            display: inline-flex;
+            gap: 2rem;
+
+            li {
+                list-style-type: none;
+            }
+
+            a {
+                text-decoration: none;
+                @include mixins.ff-fs-cl(variaveis.$ft-textos, 1rem, variaveis.$cor-primaria);
+                font-weight: 500;
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    #home {
+        max-width: 1040px;
+        @include mixins.margem-central(80%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .textos-home {
+            max-width: 464px;
+
+            h1 {
+                font-size: 42px;
+                color: variaveis.$cor-primaria;
+                margin-bottom: 2rem;
+                font-family: variaveis.$ft-titulos;
+
+                span {
+                    color: variaveis.$cor-secundaria;
+                }
+            }
+
+            .btn-main {
+                background: variaveis.$cor-terciaria;
+                @include mixins.ff-fs-cl(variaveis.$ft-textos, 1.3rem, white);
+                font-weight: 600;
+                width: 17.5rem;
+                padding: 1.5rem;
+                justify-content: center;
+                align-items: center;
+                gap: 0.625rem;
+                border-radius: 2.5em;
+                border: none;
+
+                &:hover {
+                    background: variaveis.$cor-secundaria;
+                    transition:  0.4s ease;
+                }
+            }
+        }
+
+        .img-home {
+            max-width: 474px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
